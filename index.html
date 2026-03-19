@@ -4,11 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pokédex Landing</title>
-
-  <!-- LINK CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="page">
 
   <!-- NAVBAR -->
   <div class="navbar">
@@ -16,9 +14,6 @@
       <button>HOME</button>
       <button>POKÉMON</button>
     </div>
-
-    <!-- <div class="logo">Pokédex</div> -->
-
     <div>
       <button>ABOUT</button>
     </div>
@@ -28,12 +23,13 @@
   <div class="hero">
     <div class="box">
 
-      <h1>EXPLORE THE POKÉDEX</h1>
-
-      <!-- SEARCH -->
-      <div class="search">
-        <input type="text" placeholder="Search Pokémon...">
-        <button>🔍</button>
+      <!-- SEARCH BOX -->
+      <div class="search-box">
+        <h1>EXPLORE THE POKÉDEX</h1>
+        <div class="search">
+          <input type="text" id="searchInput" placeholder="Search Pokémon...">
+          <button onclick="doSearch()">🔍</button>
+        </div>
       </div>
 
       <!-- CTA -->
@@ -44,6 +40,16 @@
 
     </div>
   </div>
+
+  <script>
+    document.getElementById('searchInput').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') doSearch();
+    });
+    function doSearch() {
+      const v = document.getElementById('searchInput').value.trim();
+      if (v) alert('Searching for: ' + v);
+    }
+  </script>
 
 </body>
 </html>
