@@ -6,10 +6,11 @@
   font-family: Arial, sans-serif;
 }
 
-/* ── BODY ── */
-body {
+/* ── PAGE WRAPPER ── */
+/* Image lives in public/images/Pokedex.png — referenced as absolute path */
+#page {
   height: 100vh;
-  background: url("images/pokedex.png") no-repeat center center / cover;
+  background: url("/images/Pokedex.png") no-repeat center center / cover;
   display: flex;
   flex-direction: column;
 }
@@ -20,8 +21,6 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  /* background: rgba(200, 0, 0, 0.82); */
-  /* border-bottom: 3px solid #8B0000; */
 }
 
 .navbar button {
@@ -76,12 +75,12 @@ body {
   color: #fff;
   font-size: clamp(12px, 2.2vw, 20px);
   padding: 14px 28px;
-  border-radius: 12px 12px 0 0;  /* top corners only */
+  border-radius: 12px 12px 0 0;
   text-align: center;
   letter-spacing: 1px;
   width: 100%;
   border: 2px solid #ff4444;
-  border-bottom: none;            /* fuses with search row */
+  border-bottom: none;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);
 }
 
@@ -89,10 +88,10 @@ body {
 .search {
   display: flex;
   width: 100%;
-  border-radius: 0 0 12px 12px;  /* bottom corners only */
+  border-radius: 0 0 12px 12px;
   overflow: hidden;
   border: 2px solid #ff4444;
-  border-top: none;               /* fuses with title */
+  border-top: none;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
 }
 
@@ -139,6 +138,9 @@ body {
   line-height: 1.6;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
   transition: background 0.15s, transform 0.15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .cta:hover {
@@ -147,7 +149,6 @@ body {
 }
 
 .cta small {
-  display: block;
   font-weight: normal;
   font-size: 11px;
   opacity: 0.88;
